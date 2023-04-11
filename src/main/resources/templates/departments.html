@@ -1,0 +1,64 @@
+<!doctype html >
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap CSS -->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous">
+
+<title>Departments</title>
+</head>
+<body>
+
+	<div class="container-fluid px-0">
+		<nav
+			class="navbar navbar-expand-lg navbar-dark bg-primary font-weight-bold">
+
+			<a class="navbar-brand text-bold bg-black " href="/"><h4>EMS</h4></a>
+
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+		</nav>
+	</div>
+
+	<h1 class="text-center">Department List</h1>
+
+
+	<div class="container text-center " >
+		<p th:text = "${msg}"></p>
+		<table class="table table-hover" >
+			<thead>
+				<tr >
+					<th>ID</th>
+					<th>Department</th>
+					<th>Update</th>
+					<th>Delete</th>
+					<th>Employees</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="d : ${departmentlist}" >
+					<td th:text="${d.dept_id}"></td>
+					<td th:text="${d.name}"></td>
+					<td> <a th:href="@{/edit-dept/{id}(id = ${d.dept_id})}"><button class="btn btn-primary">Edit</button></a></td>
+					<td > <a th:href="@{/delete-dept/{id}(id = ${d.dept_id})}" ><button class="btn btn-danger">Delete</button></a></td>
+					<td > <a th:href="@{/nonteach-list/{id}(id = ${d.dept_id})}" ><button class="btn btn-success">View</button></a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+</body>
+</html>
