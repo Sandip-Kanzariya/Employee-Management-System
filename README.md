@@ -8,6 +8,6 @@ https://user-images.githubusercontent.com/105594748/231053448-cdd9b692-62dc-47ed
 
 ### For lombok dependency : 
 ---
-**In case if you face any deficullty in lombok configuration then you have to manually add Getter, Setter, Tostring Method and Constructors in all Given Entity Class.**
+**In case if you face any dificulty in lombok configuration then you have to manually add Getter, Setter, Tostring Method and Constructors in all Given Entity Class.**
 ---
 https://user-images.githubusercontent.com/105594748/230764391-1ff8b11f-c495-4d30-8295-a49eaffd0682.mp4
