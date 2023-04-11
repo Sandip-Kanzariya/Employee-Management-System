@@ -4,7 +4,6 @@
 - Please first check **application.properties** : Databasename, Username and Password
 
 ## Employee Management System Website View 📷🎥📷
----
 https://user-images.githubusercontent.com/105594748/231053448-cdd9b692-62dc-47ed-b46f-64b3c1d4f683.mp4
 
 ### For lombok dependency : 
