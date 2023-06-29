@@ -4,7 +4,7 @@
 - Please first check **application.properties** : Databasename, Username and Password
 > Team Members
 
-1. [Gautam Lathiya]()
+1. [Gautam Lathiya](https://github.com/DigitalGit2003)
 2. [Sandip Kanzariya](https://github.com/Sandip-Kanzariya)
    
 ## Employee Management System Website View 📷🎥📷
