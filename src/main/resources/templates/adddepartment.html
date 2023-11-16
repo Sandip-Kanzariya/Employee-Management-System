@@ -1,0 +1,60 @@
+<!doctype html>
+<html >
+
+<div th:include="index :: head"></div>
+
+<title>Add Departments</title>
+<body>
+
+	<div th:include="index :: navbar"></div>
+	<h1 class="text-center">Add Department</h1>
+
+	<div class="container">
+
+		<div class="row">
+			<div
+				class="col-md-6 col-lg-6 col-xlg-6 col-sm-12 mx-auto my-4 bg-light border">
+
+				<form action="/save-dept" method="POST" id="mydept">
+					<br>
+					<div class="form-group">
+						<label class="mb-50px" >Department : </label>
+				
+						<input type="text"
+							class="form-control " name="dname" required>
+					</div>
+					<br>
+
+					<div style="text-align: right;">
+						<button type="submit" class="btn btn-primary"
+							onclick="adddepartment()">Submit</button>
+					</div>
+					
+					<br>
+					<script>
+						function adddepartment() {
+							
+							if(!document.getElementById("dname")){
+								window.alert("Department Name is required!!!");	
+							}
+							else{
+								document.getElementById("mydept").submit();
+								window.alert("Department has been added successfully !!!");							
+							}
+						}
+					</script>
+
+				</form>
+
+
+			</div>
+		</div>
+	</div>
+
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!doctype html >
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<div th:include="index :: head"></div>
+<title>Employees</title>
+<body>
+
+
+	<div th:include="index :: navbar"></div>
+	
+	<h1 class="text-center">Employee List</h1>
+
+	<div class="container text-center ">
+		<p th:text="${msg}"></p>
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Name</th>
+					<th>Email</th>
+					<th>Salary</th>
+					<th>Department name</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="d : ${elist}">
+					<td th:text="${d.empId}"></td>
+					<td th:text="${d.name}"></td>
+					<td th:text="${d.email}"></td>
+					<td th:text="${d.salary}"></td>
+					<td th:text="${d.department.name}"></td>
+
+					<!-- <td> <a th:href="@{/edit-dept/{id}(id = ${d.dept_id})}"><button class="btn btn-primary">Edit</button></a></td>
+					<td > <a th:href="@{/delete-dept/{id}(id = ${d.dept_id})}" ><button class="btn btn-danger">Delete</button></a></td>
+					<td > <a th:href="@{/nonteach-list/{id}(id = ${d.dept_id})}" ><button class="btn btn-success">View</button></a></td> -->
+				</tr>
+			</tbody>
+		</table>
+
+		<div style="text-align: right;">
+			<button type="button" class="btn btn-primary btn-lg btn-block">
+				<a style="text-decoration: none; color: white" href="/teach-form">Add
+					Teach Employee</a>
+			</button>
+			<button type="button" class="btn btn-secondary btn-lg btn-block">
+				<a style="text-decoration: none; color: white" href="/nonteach-form">Add
+					NonTeach Employee</a>
+			</button>
+
+		</div>
+	</div>
+
+</body>
+</html>

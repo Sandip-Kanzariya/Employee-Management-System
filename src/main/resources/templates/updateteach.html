@@ -1,0 +1,70 @@
+<!doctype html>
+
+<div th:include="index :: head"></div>
+<title>Update Teaching Staff</title>
+
+<body>
+
+	<div th:include="index :: navbar"></div>
+	
+	<h1 class="text-center">Update Teaching Employee</h1>
+
+	<div class="container">
+
+		<div class="row">
+			<div
+				class="col-md-6 col-lg-6 col-xlg-6 col-sm-12 mx-auto my-4 bg-light">
+				
+				<form action="/updated-teach" method="POST" id="myupdateteach">
+
+					<div class="form-group">
+						<br> <input type="hidden" class="form-control "
+							th:value="@{${teach.empId}}" name="id"> <label>Name
+							: </label> <input type="text" class="form-control "
+							th:value="@{${teach.name}}" name="ename" required> <label>Email
+							: </label> <input type="email" class="form-control "
+							th:value="@{${teach.email}}" name="email" required> <label>Salary
+							: </label> <input type="number" th:value="@{${teach.salary}}"
+							class="form-control " name="salary" required> <label>Subject
+							: </label> <input type="text" class="form-control "
+							th:value="@{${teach.subject}}" name="subject" required>
+
+						<!-- Add Department -->
+						<label>Current Department : </label> <input type="string"
+							class="form-control " th:value="@{${teach.department.name}}"
+							name="dname" disabled> <br> 
+							<label>
+							Department : </label>
+							<select name="dno">
+							<option th:each="d : ${departmentlist}" th:text="${d.name}"
+								th:value="@{${d.dept_id}}" />
+						</select>
+
+
+						<div style="text-align: right;">
+							<button type="submit" class="btn btn-primary" onclick="addnon()">Submit</button>
+						</div>
+
+					</div>
+
+					<script>
+						function addnon() {
+							window
+									.alert("Teaching Employee has been updated successfully !!!");
+							document.getElementById("myupdatenon").submit();
+						}
+					</script>
+
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous">
+		
+	</script>
+</body>
+</html>

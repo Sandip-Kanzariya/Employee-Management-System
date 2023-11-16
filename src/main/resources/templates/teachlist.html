@@ -1,0 +1,50 @@
+<!doctype html >
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+
+<div th:include="index :: head"></div>
+
+<title>Teaching Staff</title>
+<body>
+
+	<div th:include="index :: navbar"></div>
+	
+	<h1 class="text-center">Teach Staff List - <b th:text = "${dname}" class = "text-danger"></b> </h1>
+
+	<div class="container text-center " >
+		
+		<table class="table table-hover" >
+			<thead>
+				<tr >
+					<th>ID</th>
+					<th>Name</th>
+					<th>Email</th>
+					<th>Subject</th>
+					<th>Salary</th>
+					
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="d : ${reqteach}" >
+					<td th:text="${d.empId}"></td>
+					<td th:text="${d.name}"></td>
+					<td th:text="${d.email}"></td>
+					<td th:text="${d.subject}"></td>
+					<td th:text="${d.salary}"></td>
+				</tr>
+			</tbody>
+		</table>
+		
+		
+		<!-- d id in url  -->
+		<div style="text-align: center;">
+			<button type="button" class="btn btn-primary btn-lg btn-block">
+				<a style="text-decoration: none; color: white" th:href="@{/teach-form-per-dept/{id}(id = ${did})}">Add
+					Teach Employee in <b th:text = "${dname}"></b></a>
+			</button>
+		</div>
+	</div>
+
+</body>
+</html>

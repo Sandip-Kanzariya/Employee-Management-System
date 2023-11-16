@@ -1,0 +1,60 @@
+<!doctype html >
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<div th:include="index :: head"></div>
+
+<title>Teaching</title>
+
+<body>
+
+
+	<div th:include="index :: navbar"></div>
+	
+	<h1 class="text-center">Teaching Staff List</h1>
+
+	<div class="container text-center ">
+		<p th:text="${msg}"></p>
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Name</th>
+					<th>Email</th>
+					<th>Salary</th>
+					<th>Subject</th>
+					<th>Department name</th>
+					<th>Edit</th>
+					<th>Delete</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="d : ${tlist}">
+					<td th:text="${d.empId}"></td>
+					<td th:text="${d.name}"></td>
+					<td th:text="${d.email}"></td>
+					<td th:text="${d.salary}"></td>
+					<td th:text="${d.subject}"></td>
+					<td th:text="${d.department.name}"></td>
+					<td><a th:href="@{/edit-teach/{id}(id = ${d.empId})}">
+							<button class="btn btn-primary">Edit</button>
+					</a></td>
+					<td><a th:href="@{/delete-teach/{id}(id = ${d.empId})}"><button
+								class="btn btn-danger">Delete</button></a></td>
+
+					
+				</tr>
+			</tbody>
+		</table>
+
+		<div style="text-align: right;">
+			<button type="button" class="btn btn-warning btn-lg btn-block">
+				<a style="text-decoration: none; color: black" href="/teach-form">Add
+					Teach Employee</a>
+			</button>
+		</div>
+
+	</div>
+
+</body>
+</html>
