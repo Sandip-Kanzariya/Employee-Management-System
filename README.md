@@ -2,6 +2,8 @@
 > 4th Semester JAVA Project Using Spring Boot JPA  and Thymeleaf 
 
 - Please first check **application.properties** : Databasename, Username and Password
+- Change **.env** file as per your need 
+
 > Team Members
 
 <!-- 1. [Gautam Lathiya](https://github.com/DigitalGit2003)
